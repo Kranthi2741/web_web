@@ -47,7 +47,7 @@
   @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) header{background:rgba(11,17,25,.92);}}
   .nav{display:flex; align-items:center; justify-content:space-between; padding:16px 0;}
   .brand{display:flex; align-items:center; text-decoration:none; min-width:0;}
-  .brand-logo{width:258px; height:auto; flex:none; filter:drop-shadow(0 2px 7px rgba(0,0,0,.28)); transition:transform .25s ease, filter .25s ease;}
+  .brand-logo{width:258px; height:auto; flex:none; background:#fff; border:1px solid rgba(15,39,69,.12); border-radius:5px; box-shadow:0 3px 12px rgba(0,0,0,.12); transition:transform .25s ease, filter .25s ease;}
   .brand-logo{animation:logoFloat 6s ease-in-out infinite;}
   .brand:hover .brand-logo{transform:translateY(-1px) scale(1.015); filter:drop-shadow(0 5px 12px rgba(15,138,85,.25));}
   @keyframes logoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
@@ -191,7 +191,7 @@
   footer{border-top:1px solid var(--line); padding:44px 0 30px; background:var(--cream);}
   .foot-grid{display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap;}
   .foot-brand{display:flex; align-items:center; gap:10px; font-size:0.85rem; color:var(--ink-soft);}
-  .foot-logo{width:220px; height:auto; filter:drop-shadow(0 2px 6px rgba(0,0,0,.22));}
+  .foot-logo{width:220px; height:auto; background:#fff; border:1px solid rgba(15,39,69,.10); border-radius:5px; box-shadow:0 2px 8px rgba(0,0,0,.08);}
   .foot-brand:hover .foot-logo{transform:translateY(-1px); filter:drop-shadow(0 4px 10px rgba(15,138,85,.22));}
   .foot-links{display:flex; gap:24px; font-size:0.85rem;}
   .foot-links a{text-decoration:none; color:var(--ink-soft);}
@@ -238,7 +238,7 @@
   <div class="wrap">
     <div class="nav">
       <a href="#top" class="brand" aria-label="Institute for Quality Assurance home">
-        <img class="brand-logo" src="iqa-logo-transparent.png" alt="Institute for Quality Assurance — Building Trust through Quality">
+        <img class="brand-logo" src="iqa-logo.png" alt="Institute for Quality Assurance — Building Trust through Quality">
       </a>
       <nav class="links">
         <a href="#services">Services</a>
@@ -493,7 +493,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <img class="foot-logo" src="iqa-logo-transparent.png" alt="Institute for Quality Assurance">
+        <img class="foot-logo" src="iqa-logo.png" alt="Institute for Quality Assurance">
       </div>
       <div class="foot-links">
         <a href="#services">Services</a>
