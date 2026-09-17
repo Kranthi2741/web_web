@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Institute for Quality Assurance | NABL & NABH Accreditation, ISO 9001 Consulting</title>
+<meta name="description" content="IQA is a laboratory quality consultancy offering NABL & NABH accreditation support, ISO 9001 certification consulting, risk assessment, medical device evaluation and QMS training.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0f2745;
+    --navy-deep:#081a30;
+    --emerald:#0f8a55;
+    --emerald-deep:#0a6640;
+    --paper:#fbfaf6;
+    --panel:#ffffff;
+    --ink:#111a26;
+    --ink-soft:#5b6472;
+    --line:#e4e0d3;
+    --gold:#c9982f;
+    --cream:#f1ede1;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#0b1119; --panel:#121a24; --ink:#eae7dd; --ink-soft:#9aa3af; --line:#232c38; --cream:#161d27;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0b1119; --panel:#121a24; --ink:#eae7dd; --ink-soft:#9aa3af; --line:#232c38; --cream:#161d27;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--paper); color:var(--ink); font-family:'Inter',system-ui,sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  img,svg{max-width:100%; display:block;}
+  a{color:inherit;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif; color:var(--navy); line-height:1.08; letter-spacing:-0.01em;}
+  :root[data-theme="dark"] h1,:root[data-theme="dark"] h2,:root[data-theme="dark"] h3{color:var(--ink);}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) h1,:root:not([data-theme="light"]) h2,:root:not([data-theme="light"]) h3{color:var(--ink);}}
+
+  /* ===== Header ===== */
+  header{position:sticky; top:0; z-index:80; background:rgba(251,250,246,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line);}
+  :root[data-theme="dark"] header{background:rgba(11,17,25,.92);}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) header{background:rgba(11,17,25,.92);}}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:16px 0;}
+  .brand{display:flex; align-items:center; text-decoration:none; min-width:0;}
+  .brand-logo{width:258px; height:auto; flex:none; filter:drop-shadow(0 2px 7px rgba(0,0,0,.28)); transition:transform .25s ease, filter .25s ease;}
+  .brand-logo{animation:logoFloat 6s ease-in-out infinite;}
+  .brand:hover .brand-logo{transform:translateY(-1px) scale(1.015); filter:drop-shadow(0 5px 12px rgba(15,138,85,.25));}
+  @keyframes logoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+  nav.links{display:flex; gap:34px; font-size:0.92rem;}
+  nav.links a{text-decoration:none; color:var(--ink-soft); position:relative; padding-bottom:3px;}
+  nav.links a::after{content:""; position:absolute; left:0; right:0; bottom:0; height:2px; background:var(--emerald); transform:scaleX(0); transition:transform .2s;}
+  nav.links a:hover{color:var(--ink);}
+  nav.links a:hover::after{transform:scaleX(1);}
+  .nav-cta{background:var(--navy); color:#fff; padding:10px 20px; border-radius:99px; text-decoration:none; font-size:0.86rem; font-weight:600;}
+  .menu-btn{display:none; background:none; border:1px solid var(--line); border-radius:8px; width:40px; height:40px; cursor:pointer; color:var(--navy);}
+  :root[data-theme="dark"] .menu-btn{color:var(--ink);}
+  .mobile-links{display:none; flex-direction:column; padding:8px 0 18px; border-top:1px solid var(--line); margin-top:12px; gap:2px;}
+  .mobile-links a{text-decoration:none; color:var(--ink-soft); padding:10px 4px; font-size:0.95rem;}
+  .mobile-links.open{display:flex;}
+
+  /* ===== Hero ===== */
+  .hero{position:relative; background:var(--navy); color:#eef3f8; overflow:hidden;}
+  .hero-tex{position:absolute; inset:0; opacity:.5; pointer-events:none;}
+  .hero-inner{position:relative; padding:100px 0 90px; display:grid; grid-template-columns:1.2fr 0.8fr; gap:50px; align-items:center;}
+  .kicker{display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); padding:6px 14px; border-radius:99px; font-size:0.78rem; letter-spacing:.03em; color:#cfe3d6; margin-bottom:26px;}
+  .kicker .dot{width:6px; height:6px; border-radius:50%; background:var(--gold);}
+  .hero h1{font-size:3.4rem; color:#fff; font-weight:600; max-width:14ch;}
+  .hero h1 .accent{color:#8fd9b0; font-style:italic; font-weight:500;}
+  .hero p.lede{margin-top:22px; font-size:1.14rem; color:#c3d0dd; max-width:46ch;}
+  .hero-ctas{display:flex; gap:16px; margin-top:36px; flex-wrap:wrap;}
+  .btn-primary{background:#fff; color:var(--navy-deep); padding:15px 28px; text-decoration:none; font-weight:700; font-size:0.95rem; border-radius:99px;}
+  .btn-ghost{background:transparent; color:#fff; padding:15px 28px; text-decoration:none; font-weight:600; font-size:0.95rem; border-radius:99px; border:1px solid rgba(255,255,255,.35);}
+  .hero-stats{display:flex; gap:34px; margin-top:52px; flex-wrap:wrap;}
+  .hero-stats div strong{display:block; font-family:'Fraunces',serif; font-size:1.7rem; color:#fff;}
+  .hero-stats div span{font-size:0.78rem; color:#9fb2c2;}
+
+  .seal-wrap{display:flex; justify-content:center; position:relative;}
+  .hero-photo{width:100%; max-width:430px; aspect-ratio:4/3; object-fit:cover; border-radius:22px; border:1px solid rgba(255,255,255,.18); box-shadow:0 22px 55px rgba(0,0,0,.28); animation:photoDrift 8s ease-in-out infinite;}
+  .hero-photo-badge{position:absolute; right:-10px; bottom:22px; background:rgba(251,250,246,.94); color:var(--navy); padding:12px 16px; border-radius:12px; box-shadow:0 10px 24px rgba(0,0,0,.25); font-size:.76rem; font-weight:700; letter-spacing:.03em;}
+  .hero-photo-badge span{display:block; color:var(--emerald-deep); font-size:.66rem; margin-top:2px; font-weight:600;}
+  @keyframes photoDrift{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-6px) rotate(.35deg)}}
+
+  /* ===== marquee strip ===== */
+  .strip{background:var(--cream); border-bottom:1px solid var(--line); overflow:hidden;}
+  .strip-track{display:flex; gap:56px; white-space:nowrap; padding:14px 0; animation:scroll 28s linear infinite; width:max-content;}
+  .strip span{font-size:0.85rem; color:var(--ink-soft); letter-spacing:.03em; display:flex; align-items:center; gap:10px;}
+  .strip span::before{content:"◆"; color:var(--emerald); font-size:.6rem;}
+  @keyframes scroll{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+  @media (prefers-reduced-motion:reduce){ .strip-track{animation:none;} .brand-logo,.hero-photo{animation:none;} }
+
+  section{padding:96px 0;}
+  .eyebrow{display:flex; align-items:center; gap:10px; margin-bottom:16px;}
+  .eyebrow .ln{width:30px; height:2px; background:var(--gold);}
+  .eyebrow span{font-size:0.78rem; font-weight:700; letter-spacing:.05em; color:var(--emerald-deep); text-transform:uppercase;}
+  .section-head{max-width:620px; margin-bottom:52px;}
+  .section-head h2{font-size:2.3rem; font-weight:600;}
+  .section-head p{margin-top:14px; color:var(--ink-soft); font-size:1.04rem;}
+
+  /* ===== Services ===== */
+  .svc-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--line); border:1px solid var(--line); border-radius:18px; overflow:hidden;}
+  .svc-card{background:var(--panel); padding:36px 30px; transition:background .18s;}
+  .svc-card:hover{background:var(--cream);}
+  .svc-icon{width:44px; height:44px; margin-bottom:20px;}
+  .svc-icon svg{width:100%; height:100%;}
+  .svc-card h3{font-size:1.14rem; font-weight:600; margin-bottom:8px;}
+  .svc-card p{color:var(--ink-soft); font-size:0.92rem;}
+
+  /* ===== Trust quadrant ===== */
+  .quad-section{background:var(--navy-deep); color:#e7edf2;}
+  .quad-section h2{color:#fff;}
+  .quad-section .eyebrow span{color:#8fd9b0;}
+  .quad-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.14); border-radius:18px; overflow:hidden; margin-top:8px;}
+  .quad-cell{background:rgba(255,255,255,.03); padding:32px 26px;}
+  .quad-cell .qn{font-family:'Fraunces',serif; color:#8fd9b0; font-size:1.5rem; display:block; margin-bottom:10px;}
+  .quad-cell h4{font-size:1rem; color:#fff; margin-bottom:8px; font-weight:600;}
+  .quad-cell p{font-size:0.86rem; color:#a9b8c4;}
+  .quad-quote{margin-top:40px; font-family:'Fraunces',serif; font-style:italic; font-size:1.3rem; color:#d7e4ea; border-left:3px solid var(--gold); padding-left:22px; max-width:60ch;}
+
+  /* ===== Why choose ===== */
+  .reasons{display:grid; grid-template-columns:repeat(5,1fr); gap:26px; margin-top:8px;}
+  .reason{border-top:2px solid var(--emerald); padding-top:16px;}
+  .reason-icon{width:30px; height:30px; margin-bottom:14px;}
+  .reason h4{font-size:0.98rem; font-weight:700; margin-bottom:6px; font-family:'Inter',sans-serif; color:var(--navy);}
+  :root[data-theme="dark"] .reason h4{color:var(--ink);}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .reason h4{color:var(--ink);}}
+  .reason p{font-size:0.85rem; color:var(--ink-soft);}
+
+  /* ===== Process ===== */
+  .process{background:var(--cream);}
+  .process-track{position:relative; margin-top:16px;}
+  .process-track::before{content:""; position:absolute; left:23px; top:8px; bottom:8px; width:2px; background:var(--line);}
+  .p-step{display:grid; grid-template-columns:48px 1fr; gap:22px; padding:26px 0; position:relative;}
+  .p-num{width:48px; height:48px; border-radius:50%; background:var(--navy); color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-size:1.1rem; z-index:1;}
+  .p-step h4{font-size:1.08rem; margin-bottom:6px; color:var(--navy); font-weight:600;}
+  :root[data-theme="dark"] .p-step h4{color:var(--ink);}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .p-step h4{color:var(--ink);}}
+  .p-step p{color:var(--ink-soft); font-size:0.95rem; max-width:58ch;}
+
+  /* ===== CTA ===== */
+  .cta-band{background:var(--emerald-deep); color:#eafff1; padding:64px 0;}
+  .cta-band .wrap{display:flex; justify-content:space-between; align-items:center; gap:30px; flex-wrap:wrap;}
+  .cta-band h2{color:#fff; font-size:1.9rem; max-width:20ch;}
+  .cta-band p{color:#c9ecd8; margin-top:10px; max-width:44ch;}
+  .cta-band .btn-primary{color:var(--emerald-deep);}
+
+  /* ===== Contact ===== */
+  .contact-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:60px;}
+  .contact-card{background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:30px;}
+  .contact-card h4{font-size:0.76rem; letter-spacing:.05em; color:var(--emerald-deep); margin-bottom:18px; font-weight:700; text-transform:uppercase;}
+  .person{display:flex; justify-content:space-between; align-items:center; padding:14px 0; border-bottom:1px dashed var(--line); font-size:0.96rem;}
+  .person:last-of-type{border-bottom:none;}
+  .person a{text-decoration:none; color:var(--navy); font-weight:700;}
+  :root[data-theme="dark"] .person a{color:var(--ink);}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .person a{color:var(--ink);}}
+  .email-line{margin-top:18px; padding-top:18px; border-top:1px solid var(--line); font-size:0.94rem;}
+  .email-line a{color:var(--emerald-deep); font-weight:700; text-decoration:none; word-break:break-all;}
+
+  form{display:flex; flex-direction:column; gap:16px;}
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  form label{font-size:0.8rem; color:var(--ink-soft); margin-bottom:5px; display:block;}
+  form input, form select, form textarea{
+    width:100%; padding:12px 14px; border:1px solid var(--line); background:var(--panel);
+    font-family:'Inter',sans-serif; font-size:0.95rem; color:var(--ink); border-radius:10px;
+  }
+  form textarea{min-height:100px; resize:vertical;}
+  form button{margin-top:4px; align-self:flex-start; background:var(--navy); color:#fff; border:none; padding:14px 30px; font-weight:700; font-size:0.95rem; cursor:pointer; border-radius:99px;}
+  .form-note{font-size:0.8rem; color:var(--ink-soft);}
+  .form-status{font-size:0.85rem;}
+
+  /* ===== Footer ===== */
+  footer{border-top:1px solid var(--line); padding:44px 0 30px; background:var(--cream);}
+  .foot-grid{display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap;}
+  .foot-brand{display:flex; align-items:center; gap:10px; font-size:0.85rem; color:var(--ink-soft);}
+  .foot-logo{width:220px; height:auto; filter:drop-shadow(0 2px 6px rgba(0,0,0,.22));}
+  .foot-brand:hover .foot-logo{transform:translateY(-1px); filter:drop-shadow(0 4px 10px rgba(15,138,85,.22));}
+  .foot-links{display:flex; gap:24px; font-size:0.85rem;}
+  .foot-links a{text-decoration:none; color:var(--ink-soft);}
+  .foot-tag{font-size:0.78rem; color:var(--ink-soft); margin-top:22px; text-align:center;}
+
+  @media (max-width:940px){
+    nav.links{display:none;}
+    .menu-btn{display:block;}
+    .hero-inner{grid-template-columns:1fr; padding:70px 0 60px;}
+    .seal-wrap{order:-1; margin-bottom:10px;}
+    .hero-photo{max-width:520px;}
+    .hero-photo-badge{right:4px; bottom:14px;}
+    .hero h1{font-size:2.4rem;}
+    .svc-grid{grid-template-columns:1fr 1fr;}
+    .quad-grid{grid-template-columns:1fr 1fr;}
+    .reasons{grid-template-columns:1fr 1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+  }
+  @media (max-width:600px){
+    .wrap{padding:0 22px;}
+    .brand-logo{width:210px;}
+    .nav{padding:12px 0;}
+    section{padding:66px 0;}
+    .svc-grid{grid-template-columns:1fr;}
+    .quad-grid{grid-template-columns:1fr;}
+    .reasons{grid-template-columns:1fr;}
+    .cta-band .wrap{flex-direction:column; align-items:flex-start;}
+    .hero-stats{gap:22px;}
+  }
+  :focus-visible{outline:2px solid var(--emerald); outline-offset:2px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <a href="#top" class="brand" aria-label="Institute for Quality Assurance home">
+        <img class="brand-logo" src="iqa-logo-transparent.png" alt="Institute for Quality Assurance — Building Trust through Quality">
+      </a>
+      <nav class="links">
+        <a href="#services">Services</a>
+        <a href="#why">Why Quality</a>
+        <a href="#process">How We Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <a href="#contact" class="nav-cta">Talk to Us</a>
+        <button class="menu-btn" id="menu-btn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+    <div class="mobile-links" id="mobile-links">
+      <a href="#services">Services</a>
+      <a href="#why">Why Quality</a>
+      <a href="#process">How We Work</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero" style="padding:0;">
+    <div class="wrap">
+      <div class="hero-inner">
+        <div>
+          <div class="kicker"><span class="dot"></span> NABL &amp; NABH accreditation consultants</div>
+          <h1>Quality leads to cost — <span class="accent">and to trust.</span></h1>
+          <p class="lede">IQA helps laboratories and hospitals build the quality systems that accreditation bodies, regulators and patients rely on — from first gap assessment through to NABL/NABH certification and beyond.</p>
+          <div class="hero-ctas">
+            <a href="#contact" class="btn-primary">Request a consultation</a>
+            <a href="#services" class="btn-ghost">See our services</a>
+          </div>
+          <div class="hero-stats">
+            <div><strong>7+</strong><span>core service lines</span></div>
+            <div><strong>NABL / NABH</strong><span>accreditation focus</span></div>
+            <div><strong>ISO 9001</strong><span>&amp; ISO 15189 QMS</span></div>
+          </div>
+        </div>
+        <div class="seal-wrap">
+          <img class="hero-photo" src="lab-quality-hero.png" alt="Quality professional reviewing laboratory processes beside diagnostic equipment">
+          <div class="hero-photo-badge">Quality in practice<span>NABL · NABH · ISO systems</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="strip-track">
+      <span>NABL &amp; NABH accreditation</span>
+      <span>ISO 9001 certification</span>
+      <span>ISO 15189 QMS training</span>
+      <span>Risk assessment</span>
+      <span>Medical device evaluation</span>
+      <span>5S implementation</span>
+      <span>NABL &amp; NABH accreditation</span>
+      <span>ISO 9001 certification</span>
+      <span>ISO 15189 QMS training</span>
+      <span>Risk assessment</span>
+      <span>Medical device evaluation</span>
+      <span>5S implementation</span>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow"><span class="ln"></span><span>Our services</span></div>
+        <h2>Seven ways we build quality into your lab</h2>
+        <p>Each service stands on its own or folds into a full accreditation programme, scoped to your lab's current stage of readiness.</p>
+      </div>
+      <div class="svc-grid">
+
+        <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="19" stroke="#0f8a55" stroke-width="2"/><path d="M14 22l6 6 12-12" stroke="#0f8a55" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>NABL &amp; NABH Accreditation</h3>
+          <p>End-to-end support for achieving and maintaining NABL and NABH accreditation, from gap analysis through assessment.</p>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="15" stroke="#0f8a55" stroke-width="2"/><path d="M22 3v6M22 35v6M3 22h6M35 22h6" stroke="#0f8a55" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <h3>ISO 9001 Certification</h3>
+          <p>Consulting support for ISO 9001 quality management system implementation and certification.</p>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 44 44" fill="none"><circle cx="16" cy="15" r="6" stroke="#0f8a55" stroke-width="2"/><path d="M4 38c0-7 6-12 12-12s12 5 12 12" stroke="#0f8a55" stroke-width="2" stroke-linecap="round"/><path d="M30 12l3 3 6-6" stroke="#c9982f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Skill Enhancement for Medical Technologists</h3>
+          <p>Enhancing technical competence and professional growth for laboratory and technical staff.</p>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 44 44" fill="none"><rect x="7" y="6" width="30" height="32" rx="3" stroke="#0f8a55" stroke-width="2"/><path d="M14 16h16M14 23h16M14 30h10" stroke="#0f8a55" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <h3>QMS Trainings (ISO 9001 &amp; ISO 15189)</h3>
+          <p>Comprehensive training programmes for quality management systems, tailored to your team.</p>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 44 44" fill="none"><path d="M22 4l18 8v10c0 11-7.5 18-18 18S4 33 4 22V12z" stroke="#0f8a55" stroke-width="2" stroke-linejoin="round"/><path d="M22 15v10" stroke="#0f8a55" stroke-width="2.5" stroke-linecap="round"/><circle cx="22" cy="29" r="1.6" fill="#0f8a55"/></svg></div>
+          <h3>Risk Assessment</h3>
+          <p>Identify, evaluate and mitigate risks across processes to ensure ongoing safety and compliance.</p>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 44 44" fill="none"><rect x="9" y="9" width="26" height="20" rx="2" stroke="#0f8a55" stroke-width="2"/><path d="M17 34h10M22 29v5" stroke="#0f8a55" stroke-width="2" stroke-linecap="round"/><path d="M15 20l4 4 8-8" stroke="#c9982f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Medical Device Evaluation</h3>
+          <p>Evaluation and compliance support for medical devices used across clinical and diagnostic settings.</p>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 44 44" fill="none"><path d="M22 4a18 18 0 1 1-12.7 30.7" stroke="#0f8a55" stroke-width="2" stroke-linecap="round"/><path d="M6 22L2 26l6 2" stroke="#0f8a55" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>5S Implementation &amp; Training</h3>
+          <p>Sort, set in order, shine, standardise and sustain — workplace organisation for safety and efficiency.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="quad-section" id="why">
+    <div class="wrap">
+      <div class="section-head" style="max-width:100%; display:flex; justify-content:space-between; gap:40px; flex-wrap:wrap; align-items:flex-end;">
+        <div style="max-width:560px;">
+          <div class="eyebrow"><span class="ln" style="background:#c9982f;"></span><span>Why quality systems matter</span></div>
+          <h2>Building trust through quality</h2>
+        </div>
+        <p style="max-width:32ch; color:#a9b8c4; margin-bottom:6px;">In laboratory operations, quality is not an extra step — it's the system that keeps everything working.</p>
+      </div>
+      <div class="quad-grid">
+        <div class="quad-cell"><span class="qn">01</span><h4>Prevent errors</h4><p>Through clear procedures and controls at every step of testing.</p></div>
+        <div class="quad-cell"><span class="qn">02</span><h4>Ensure consistency</h4><p>In testing processes and results, batch after batch.</p></div>
+        <div class="quad-cell"><span class="qn">03</span><h4>Improve credibility</h4><p>Of data reported to clients, patients and stakeholders.</p></div>
+        <div class="quad-cell"><span class="qn">04</span><h4>Support compliance</h4><p>With industry and international standards such as ISO 17025.</p></div>
+      </div>
+      <p class="quad-quote">"Building trust starts with building quality."</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow"><span class="ln"></span><span>Why partner with us</span></div>
+        <h2>What you get working with IQA</h2>
+      </div>
+      <div class="reasons">
+        <div class="reason">
+          <svg class="reason-icon" viewBox="0 0 30 30" fill="none"><circle cx="15" cy="10" r="5" stroke="#0f8a55" stroke-width="2"/><path d="M4 27c0-6 5-10 11-10s11 4 11 10" stroke="#0f8a55" stroke-width="2" stroke-linecap="round"/></svg>
+          <h4>Experienced professionals</h4><p>Consultants who have taken labs through real accreditation cycles.</p>
+        </div>
+        <div class="reason">
+          <svg class="reason-icon" viewBox="0 0 30 30" fill="none"><circle cx="15" cy="15" r="12" stroke="#0f8a55" stroke-width="2"/><circle cx="15" cy="15" r="4" stroke="#0f8a55" stroke-width="2"/></svg>
+          <h4>Customised solutions</h4><p>Programmes scoped to your lab's size, scope and current maturity.</p>
+        </div>
+        <div class="reason">
+          <svg class="reason-icon" viewBox="0 0 30 30" fill="none"><path d="M4 24l6-8 5 5 9-13" stroke="#0f8a55" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h4>Improved quality &amp; efficiency</h4><p>Systems that raise output quality while trimming rework.</p>
+        </div>
+        <div class="reason">
+          <svg class="reason-icon" viewBox="0 0 30 30" fill="none"><path d="M15 3l10 4v7c0 7-4.5 11-10 13-5.5-2-10-6-10-13V7z" stroke="#0f8a55" stroke-width="2" stroke-linejoin="round"/></svg>
+          <h4>Regulatory compliance</h4><p>Built to satisfy assessors and evolving regulatory requirements.</p>
+        </div>
+        <div class="reason">
+          <svg class="reason-icon" viewBox="0 0 30 30" fill="none"><path d="M15 3v24M3 15h24" stroke="#0f8a55" stroke-width="2" stroke-linecap="round"/><circle cx="15" cy="15" r="12" stroke="#0f8a55" stroke-width="2"/></svg>
+          <h4>End-to-end support</h4><p>From gap assessment through to surveillance and renewal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process" id="process">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow"><span class="ln"></span><span>How we work</span></div>
+        <h2>A straightforward path to accreditation</h2>
+        <p>Every engagement follows the same disciplined sequence, adapted to your lab's starting point.</p>
+      </div>
+      <div class="process-track">
+        <div class="p-step"><div class="p-num">1</div><div><h4>Gap assessment</h4><p>We review your current documentation, processes and infrastructure against the target standard.</p></div></div>
+        <div class="p-step"><div class="p-num">2</div><div><h4>Roadmap &amp; documentation</h4><p>A scoped plan and the quality manuals, SOPs and records the standard requires.</p></div></div>
+        <div class="p-step"><div class="p-num">3</div><div><h4>Training &amp; implementation</h4><p>Hands-on training for your team as new procedures go live on the floor.</p></div></div>
+        <div class="p-step"><div class="p-num">4</div><div><h4>Internal audit &amp; mock assessment</h4><p>A dry run that surfaces gaps before the real assessors do.</p></div></div>
+        <div class="p-step"><div class="p-num">5</div><div><h4>Assessment support &amp; surveillance</h4><p>We stay with you through the formal assessment and ongoing renewal cycles.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <div class="wrap">
+      <div>
+        <h2>Together, we build safer, more reliable healthcare systems.</h2>
+        <p>Tell us about your lab or facility and where you are in the accreditation journey.</p>
+      </div>
+      <a href="#contact" class="btn-primary">Get in touch</a>
+    </div>
+  </div>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow"><span class="ln"></span><span>Contact us</span></div>
+        <h2>Start with a conversation</h2>
+        <p>Reach us directly, or send a few details below and we'll follow up.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h4>Direct contacts</h4>
+          <div class="person"><span>Jayaprakash CR</span><a href="tel:+918712718227">+91 87127 18227</a></div>
+          <div class="person"><span>Mahesh P</span><a href="tel:+918712778582">+91 87127 78582</a></div>
+          <div class="email-line">Email: <a href="mailto:instituteforqualityassurance@gmail.com">instituteforqualityassurance@gmail.com</a></div>
+        </div>
+        <div>
+          <form id="enquiry-form">
+            <div class="form-row">
+              <div><label for="name">Name</label><input type="text" id="name" name="name" required></div>
+              <div><label for="org">Lab / hospital name</label><input type="text" id="org" name="org"></div>
+            </div>
+            <div class="form-row">
+              <div><label for="phone">Phone or email</label><input type="text" id="phone" name="phone" required></div>
+              <div>
+                <label for="service">What do you need?</label>
+                <select id="service" name="service">
+                  <option>NABL / NABH accreditation</option>
+                  <option>ISO 9001 certification</option>
+                  <option>QMS training</option>
+                  <option>Risk assessment</option>
+                  <option>Medical device evaluation</option>
+                  <option>5S implementation</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="A little about your lab and where you are today"></textarea>
+            </div>
+            <button type="submit">Send enquiry</button>
+            <p class="form-note">This opens your email app, addressed to us — nothing is stored on this page.</p>
+            <p class="form-status" id="form-status"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img class="foot-logo" src="iqa-logo-transparent.png" alt="Institute for Quality Assurance">
+      </div>
+      <div class="foot-links">
+        <a href="#services">Services</a>
+        <a href="#why">Why Quality</a>
+        <a href="#process">How We Work</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <p class="foot-tag">© <span id="year"></span> Institute for Quality Assurance. Building Trust through Quality.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileLinks = document.getElementById('mobile-links');
+  menuBtn.addEventListener('click', function(){
+    const open = mobileLinks.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open);
+  });
+  mobileLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileLinks.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+  }));
+
+  const form = document.getElementById('enquiry-form');
+  const status = document.getElementById('form-status');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const org = document.getElementById('org').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const service = document.getElementById('service').value;
+    const message = document.getElementById('message').value.trim();
+
+    if(!name || !phone){
+      status.textContent = 'Please fill in your name and a phone or email so we can reach you.';
+      status.style.color = '#c9982f';
+      return;
+    }
+
+    const subject = encodeURIComponent('Enquiry: ' + service + ' — ' + name);
+    const body = encodeURIComponent(
+      'Name: ' + name + '\n' +
+      'Lab / hospital: ' + org + '\n' +
+      'Phone / email: ' + phone + '\n' +
+      'Interested in: ' + service + '\n\n' +
+      'Message:\n' + message
+    );
+    window.location.href = 'mailto:instituteforqualityassurance@gmail.com?subject=' + subject + '&body=' + body;
+    status.textContent = 'Opening your email app to send this to instituteforqualityassurance@gmail.com…';
+    status.style.color = '#0f8a55';
+  });
+</script>
+
+</body>
+</html>
